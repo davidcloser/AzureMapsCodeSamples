@@ -4,7 +4,7 @@ from unidecode import unidecode
 import re
 
 cases = pd.read_excel("cases_new.xlsx").dropna()
-data = gpd.read_file("concelhos_david (1).geojson")
+data = gpd.read_file("concelhos.json")
 
 f = lambda x: unidecode(re.sub(r"\d", "", x.lower()).strip())
 cases["ProvinceName"] = cases["ProvinceName"].apply(f)
